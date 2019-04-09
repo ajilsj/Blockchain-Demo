@@ -39,7 +39,7 @@ class Blockchain(object):
     target = 2 ** (256 - diff)
 
     chain = []
-    chain.append(Block("GENESIS", 0,0))
+    chain.append(Block("GENESIS", 1,0))
 
     def add(self, block):
         block.previous_hash = self.block.hash()
@@ -63,7 +63,6 @@ def menu():
     choice = input("""
                       A: LOGIN
                       B: LOGOUT
-
                       PLEASE ENTER YOUR CHOICE: """)
 
     if choice == "A" or choice == "a":
@@ -86,7 +85,7 @@ def login():
     id=input("\n PLEASE ENTER YOU ID NUMBER:")
 
 
-    if id == "00": #default ID
+    if id == "1234": #Default ID
         vote()
 
     else:
@@ -99,16 +98,16 @@ def vote():
     print()
 
     yvote = input("\n WHO WOULD YOU LIKE TO VOTE FOR:\n"
-               "A. AJIL\n"
-               "B. AMA\n"
+               "A. JACK DOWRY\n"
+               "B. KATE HOLLAND\n"
                "PLEASE ENTER YOUR CHOICE:")
 
 
     if yvote == "A" or yvote == "a" or yvote == "B" or yvote == "b":
         if yvote == "A" or yvote == "a":
-            vote_name = "AJIL"
+            vote_name = "JACK DOWRY"
         else:
-            vote_name = "AMA"
+            vote_name = "KATE HOLLAND"
 
         print("\n--------------")
         print("VOTE RECORDED. PLEASE WAIT WHILE OTHER NODES ARE CONNECTED....")
@@ -138,5 +137,4 @@ def vote():
         vote()
 
 
-## has some importance, never change
 main()
